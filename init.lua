@@ -13,22 +13,30 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup({
-{
-	--neovim-tree
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
+require('lazy').setup {
+  {
+    --neovim-tree
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    }
-},
-require 'plugins.neotree',
-require 'plugins.colortheme',
-require 'plugins.bufferline',
-require 'plugins.treesitter',
-require 'plugins.lualine',
-require 'plugins.telescope',
-})
+    },
+  },
+  require 'plugins.neotree',
+  require 'plugins.colortheme',
+  require 'plugins.bufferline',
+  require 'plugins.treesitter',
+  require 'plugins.lualine',
+  require 'plugins.telescope',
+  require 'plugins.lsp',
+  require 'plugins.autocompletion',
+  require 'plugins.autoformatting',
+  require 'plugins.gitsigns',
+  require 'plugins.alpha',
+  require 'plugins.indent-line',
+  require 'plugins.misc',
+  require 'plugins.comments',
+}
